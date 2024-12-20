@@ -39,6 +39,16 @@ public class LeapYearTests {
         Assertions.assertThat(result).isFalse();
     }
 
+    @Test
+    public void should_return_false_when_year_is_1998() {
+        // GIVEN
+        LeapYear leapYear = new LeapYear();
+        // WHEN
+        boolean result = leapYear.isLeapYear(1998);
+        // THEN
+        Assertions.assertThat(result).isFalse();
+    }
+
 
 
 
