@@ -2,6 +2,8 @@ package com.kata.leapyear;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 
 public class LeapYearTests {
@@ -29,26 +31,19 @@ public class LeapYearTests {
         Assertions.assertThat(result).isTrue();
     }
 
-    @Test
-    public void should_return_false_when_year_is_1997() {
+    @ParameterizedTest
+    @CsvSource({
+            "1997",
+            "1998"
+    })
+    public void should_return_false_when_year_is_not_divisible_by_4(int year) {
         // GIVEN
         LeapYear leapYear = new LeapYear();
         // WHEN
-        boolean result = leapYear.isLeapYear(1997);
+        boolean result = leapYear.isLeapYear(year);
         // THEN
         Assertions.assertThat(result).isFalse();
     }
-
-    @Test
-    public void should_return_false_when_year_is_1998() {
-        // GIVEN
-        LeapYear leapYear = new LeapYear();
-        // WHEN
-        boolean result = leapYear.isLeapYear(1998);
-        // THEN
-        Assertions.assertThat(result).isFalse();
-    }
-
 
 
 
