@@ -21,16 +21,19 @@ public class LeapYearTests {
 //            - 2000 : bissextile.
 
 
-    @Test
-    public void should_return_true_when_year_is_1996() {
+    @ParameterizedTest
+    @CsvSource({
+            "1996",
+            "2000"
+    })
+    public void should_return_true_when_year_is_divisible_by_4(int year) {
         // GIVEN
         LeapYear leapYear = new LeapYear();
         // WHEN
-        boolean result = leapYear.isLeapYear(1996);
+        boolean result = leapYear.isLeapYear(year);
         // THEN
         Assertions.assertThat(result).isTrue();
     }
-
     @ParameterizedTest
     @CsvSource({
             "1997",
