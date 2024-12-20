@@ -34,7 +34,8 @@ public class LeapYearTests {
     @ParameterizedTest
     @CsvSource({
             "1997",
-            "1998"
+            "1998",
+            "1999"
     })
     public void should_return_false_when_year_is_not_divisible_by_4(int year) {
         // GIVEN
