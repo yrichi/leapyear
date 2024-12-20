@@ -20,13 +20,16 @@ public class LeapYearTests {
 
 
     @Test
-    public void should_return_true_when_year_is_not_divisible_by_4() {
+    public void should_return_true_when_year_is_1996() {
         // GIVEN
         LeapYear leapYear = new LeapYear();
         // WHEN
-        boolean result = leapYear.isLeapYear(1997);
+        boolean result = leapYear.isLeapYear(1996);
         // THEN
         Assertions.assertThat(result).isTrue();
     }
 
+
 }
+
+
