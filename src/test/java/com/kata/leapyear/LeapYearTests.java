@@ -34,6 +34,7 @@ public class LeapYearTests {
         // THEN
         Assertions.assertThat(result).isTrue();
     }
+
     @ParameterizedTest
     @CsvSource({
             "1997",
@@ -49,6 +50,16 @@ public class LeapYearTests {
         Assertions.assertThat(result).isFalse();
     }
 
+
+    @Test
+    public void should_return_false_when_year_is_1900() {
+        // GIVEN
+        LeapYear leapYear = new LeapYear();
+        // WHEN
+        boolean result = leapYear.isLeapYear(1900);
+        // THEN
+        Assertions.assertThat(result).isFalse();
+    }
 
 
 }
